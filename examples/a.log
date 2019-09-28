@@ -1,0 +1,495 @@
+********************************************************************************
+* ugshell - ug4.0.2, head revision 'UNKNOWN',                                  *
+*                    compiled 'UNKNOWN'                                        *
+*                    on 'UNKNOWN'.                                             *
+*                                                                              *
+* arguments:                                                                   *
+*   -outproc id:         Sets the output-proc to id. Default is 0.             *
+*   -ex scriptname:      Executes the specified script.                        *
+*   -noquit:             Runs the interactive shell after specified script.    *
+*   -noterm:             Terminal logging will be disabled.                    *
+*   -logtofile filename: Output will be written to the specified file.         *
+*   -call:               Combines all following arguments to one lua command   *
+*                        and executes it. Ignored if it follows '-ex'.         *
+*                        '(', ')', and '"' have to be escaped, e.g.: '\('      *
+* Additional parameters are passed to the script through ugargc and ugargv.    *
+*                                                                              *
+* Initializing: paths... done, bridge... done, plugins... done                 *
+********************************************************************************
+ General parameters chosen:
+    grid       = ./../apps/Shaheen/tuning_fork.ugx
+    numRefs    = 1
+    numPreRefs = 0
+    numProcs   = 1
+    material   = Iron
+  evIterations = 100
+  evPrec = 0.001
+
+Refinement step 1 ... done!
+| ---------------------------------------------------------------------------- |
+|  Number of DoFs (All Procs)                                                  |
+|  Algebra: Block 3 (divide by 3 for #Index)                                   |
+|                                                                              |
+|    GridLevel   |       Domain |     0: Inner |  1: Boundary                  |
+| ---------------------------------------------------------------------------- |
+| (lev,    0)    |         2373 |         2334 |           39 |
+| (lev,    1)    |        14865 |        14748 |          117 |
+| (lev,    0, g) |         2373 |         2334 |           39 |
+| (lev,    1, g) |        14865 |        14748 |          117 |
+| (surf, top)    |        14865 |        14748 |          117 |
+| ---------------------------------------------------------------------------- |
+| For Legend and Options: print_statistic("legend").                           |
+| ---------------------------------------------------------------------------- |
+Assemble Mass Matrix
+Assemble Stiffness Matrix
+PINVIT Eigensolver by Martin Rupp / G-CSC 2013-2015.
+ MaxIterations = 100
+ Precision = 0.001 (absolute) 
+ MinimumDefectToCalcCorrection = 0.001
+ Number of EV = 1
+ PINVIT = 2 = Preconditioned Block Gradient Method
+ Preconditioner: 
+ | GeometricMultigrid (V-Cycle)
+ |  Smoother (3x pre, 3x post): Symmetric Gauss-Seidel( damping = ConstantDamping(1))
+ |  Basesolver ( Baselevel = 0, gathered base = true): 
+ |  # LU Decomposition: Direct Solver for Linear Equation Systems.
+ |  #  Minimum Entries for Sparse LU: 4000
+
+	Additionaly storing 8 eigenvectors
+
+Initializing... done.
+PINVIT: Initializing preconditioner... done.
+=====================================================================================
+iteration 0
+0 lambda:    1.89798e+11 defect:     1.4864e+10
+
+0 lambda:        15950.9 defect:         276983
+1 lambda:    3.24817e+11 defect:    1.98002e+10
+=====================================================================================
+iteration 1
+0 lambda:        15950.9 defect:         276983 reduction:    1.86345e-05
+
+0 lambda:        14586.5 defect:        87799.2
+1 lambda:     2.9575e+06 defect:    1.27857e+07
+2 lambda:    3.50166e+11 defect:    2.06249e+10
+=====================================================================================
+iteration 2
+0 lambda:        14586.5 defect:        87799.2 reduction:       0.316984
+
+0 lambda:        14469.2 defect:        27939.4
+1 lambda:    1.65198e+06 defect:    9.67132e+06
+2 lambda:    5.93501e+06 defect:    2.05004e+07
+3 lambda:    4.17902e+11 defect:     2.2718e+10
+=====================================================================================
+iteration 3
+0 lambda:        14469.2 defect:        27939.4 reduction:        0.31822
+
+0 lambda:        14449.7 defect:        12490.8
+1 lambda:         205377 defect:    3.25818e+06
+2 lambda:    5.91557e+06 defect:     2.0294e+07
+3 lambda:    2.35396e+07 defect:    3.42045e+07
+4 lambda:     4.5578e+11 defect:    2.37989e+10
+=====================================================================================
+iteration 4
+0 lambda:        14449.7 defect:        12490.8 reduction:       0.447069
+
+0 lambda:        14443.2 defect:        9837.31
+1 lambda:        31613.5 defect:         926665
+2 lambda:    4.90465e+06 defect:     1.8924e+07
+3 lambda:    1.53317e+07 defect:    2.75105e+07
+4 lambda:     2.7206e+08 defect:    1.25811e+08
+5 lambda:    5.33135e+11 defect:    2.60736e+10
+=====================================================================================
+iteration 5
+0 lambda:        14443.2 defect:        9837.31 reduction:       0.787562
+
+0 lambda:        14434.4 defect:        15435.1
+1 lambda:          17204 defect:         319226
+2 lambda:    2.86255e+06 defect:    1.29368e+07
+3 lambda:    1.52142e+07 defect:    2.88226e+07
+4 lambda:    6.50656e+07 defect:    6.53913e+07
+5 lambda:    3.16224e+08 defect:    1.39161e+08
+6 lambda:    6.26668e+11 defect:    2.85834e+10
+=====================================================================================
+iteration 6
+0 lambda:        14434.4 defect:        15435.1 reduction:        1.56904
+
+0 lambda:        14404.4 defect:        39065.9
+1 lambda:        14889.9 defect:         146256
+2 lambda:    2.30249e+06 defect:    1.15348e+07
+3 lambda:    8.82785e+06 defect:    2.29399e+07
+4 lambda:    5.77987e+07 defect:    4.96873e+07
+5 lambda:    2.67008e+08 defect:    1.24987e+08
+6 lambda:     6.9073e+08 defect:    2.35741e+08
+7 lambda:     6.6701e+11 defect:    2.95536e+10
+=====================================================================================
+iteration 7
+0 lambda:        14404.4 defect:        39065.9 reduction:        2.53098
+
+0 lambda:        14349.6 defect:        32216.4
+1 lambda:        14603.3 defect:          45938
+2 lambda:    2.14228e+06 defect:    1.01958e+07
+3 lambda:    8.81696e+06 defect:    2.27029e+07
+4 lambda:    5.77966e+07 defect:    4.96968e+07
+5 lambda:    1.53247e+08 defect:    1.20686e+08
+6 lambda:      3.415e+08 defect:    1.37628e+08
+7 lambda:    7.01152e+08 defect:    2.42317e+08
+8 lambda:    9.01682e+11 defect:    3.53512e+10
+=====================================================================================
+iteration 8
+0 lambda:        14349.6 defect:        32216.4 reduction:       0.824666
+
+0 lambda:        14331.1 defect:        11899.7
+1 lambda:        14572.8 defect:        13904.1
+2 lambda:    1.82978e+06 defect:    9.75313e+06
+3 lambda:    6.38867e+06 defect:    2.01297e+07
+4 lambda:    5.09818e+07 defect:    4.92354e+07
+5 lambda:    1.15818e+08 defect:     1.1614e+08
+6 lambda:    3.36454e+08 defect:    1.40329e+08
+7 lambda:    6.02106e+08 defect:    2.24854e+08
+8 lambda:    1.14083e+09 defect:    2.10406e+08
+9 lambda:    9.45929e+11 defect:    3.64513e+10
+=====================================================================================
+iteration 9
+0 lambda:        14331.1 defect:        11899.7 reduction:       0.369368
+
+0 lambda:        14329.3 defect:        4684.84
+1 lambda:        14570.5 defect:        6293.72
+2 lambda:    1.79724e+06 defect:    9.23279e+06
+3 lambda:     5.7933e+06 defect:    2.10922e+07
+4 lambda:    4.97578e+07 defect:    5.20759e+07
+5 lambda:    1.13171e+08 defect:    1.20862e+08
+6 lambda:    2.10061e+08 defect:    1.28119e+08
+7 lambda:    4.24934e+08 defect:    1.64227e+08
+8 lambda:    6.40931e+08 defect:    2.35575e+08
+9 lambda:    1.19776e+09 defect:    2.19435e+08
+=====================================================================================
+iteration 10
+0 lambda:        14329.3 defect:        4684.84 reduction:       0.393694
+
+0 lambda:          14329 defect:        1587.24
+1 lambda:        14570.1 defect:        3478.32
+2 lambda:    1.79477e+06 defect:    9.20742e+06
+3 lambda:    5.12673e+06 defect:    1.68058e+07
+4 lambda:    3.70872e+07 defect:    6.81165e+07
+5 lambda:    8.25841e+07 defect:    8.44418e+07
+6 lambda:    1.21842e+08 defect:    1.15147e+08
+7 lambda:    2.18394e+08 defect:    1.22875e+08
+8 lambda:    5.29058e+08 defect:    2.00241e+08
+9 lambda:    1.03724e+09 defect:    2.54645e+08
+=====================================================================================
+iteration 11
+0 lambda:          14329 defect:        1587.24 reduction:       0.338804
+
+0 lambda:          14329 defect:        490.607
+1 lambda:        14570.1 defect:        3113.83
+2 lambda:    1.51001e+06 defect:    8.36811e+06
+3 lambda:    4.76344e+06 defect:    1.61408e+07
+4 lambda:    1.78211e+07 defect:    3.17589e+07
+5 lambda:    6.80285e+07 defect:    9.70523e+07
+6 lambda:    8.28095e+07 defect:    9.15384e+07
+7 lambda:    1.71179e+08 defect:    1.23751e+08
+8 lambda:     2.5851e+08 defect:    1.46992e+08
+9 lambda:    9.09162e+08 defect:    2.88374e+08
+=====================================================================================
+iteration 12
+0 lambda:          14329 defect:        490.607 reduction:       0.309094
+
+0 lambda:          14329 defect:        170.419
+1 lambda:        14570.1 defect:        3102.88
+2 lambda:    1.50935e+06 defect:    8.28834e+06
+3 lambda:    4.56612e+06 defect:    1.52906e+07
+4 lambda:      1.364e+07 defect:    3.34431e+07
+5 lambda:     6.7584e+07 defect:      9.261e+07
+6 lambda:    8.23554e+07 defect:    9.52234e+07
+7 lambda:     1.5381e+08 defect:    1.19026e+08
+8 lambda:    2.58398e+08 defect:    1.47639e+08
+9 lambda:    1.41962e+09 defect:    3.21966e+08
+=====================================================================================
+iteration 13
+0 lambda:          14329 defect:        170.419 reduction:       0.347363
+
+0 lambda:          14329 defect:        77.1678
+1 lambda:          14570 defect:        3098.17
+2 lambda:    1.48507e+06 defect:     7.8482e+06
+3 lambda:    4.51989e+06 defect:    1.51294e+07
+4 lambda:    1.20978e+07 defect:    2.75021e+07
+5 lambda:    6.58041e+07 defect:    5.96088e+07
+6 lambda:    7.14537e+07 defect:    1.22541e+08
+7 lambda:    1.53361e+08 defect:    1.18786e+08
+8 lambda:    2.57316e+08 defect:    1.47912e+08
+9 lambda:    1.11281e+09 defect:    3.48913e+08
+=====================================================================================
+iteration 14
+0 lambda:          14329 defect:        77.1678 reduction:       0.452813
+
+0 lambda:          14329 defect:        35.1957
+1 lambda:          14570 defect:         2973.5
+2 lambda:    1.41041e+06 defect:    8.06513e+06
+3 lambda:    4.24061e+06 defect:     1.5492e+07
+4 lambda:    1.20433e+07 defect:    2.77817e+07
+5 lambda:    6.37234e+07 defect:    7.36552e+07
+6 lambda:    7.02649e+07 defect:    1.16651e+08
+7 lambda:    1.50363e+08 defect:    1.21174e+08
+8 lambda:    2.53602e+08 defect:    1.45395e+08
+9 lambda:    1.26391e+09 defect:    3.69042e+08
+=====================================================================================
+iteration 15
+0 lambda:          14329 defect:        35.1957 reduction:       0.456093
+
+0 lambda:          14329 defect:        18.1453
+1 lambda:          14570 defect:        2944.09
+2 lambda:     1.4104e+06 defect:    8.07505e+06
+3 lambda:    4.23573e+06 defect:    1.52721e+07
+4 lambda:    1.20401e+07 defect:    2.78912e+07
+5 lambda:    6.26077e+07 defect:    6.29359e+07
+6 lambda:     6.9603e+07 defect:    1.25349e+08
+7 lambda:    1.31433e+08 defect:    1.12661e+08
+8 lambda:    2.53244e+08 defect:    1.45538e+08
+9 lambda:     1.5852e+09 defect:    4.50568e+08
+=====================================================================================
+iteration 16
+0 lambda:          14329 defect:        18.1453 reduction:       0.515553
+
+0 lambda:          14329 defect:        10.2294
+1 lambda:          14570 defect:        2944.59
+2 lambda:    1.41039e+06 defect:    8.07961e+06
+3 lambda:    4.23232e+06 defect:    1.54079e+07
+4 lambda:    1.20142e+07 defect:     2.7486e+07
+5 lambda:    6.25712e+07 defect:    6.33571e+07
+6 lambda:    6.93558e+07 defect:    1.26005e+08
+7 lambda:    1.31394e+08 defect:    1.12843e+08
+8 lambda:     2.5297e+08 defect:    1.45266e+08
+9 lambda:    2.52069e+09 defect:    6.08265e+08
+=====================================================================================
+iteration 17
+0 lambda:          14329 defect:        10.2294 reduction:        0.56375
+
+0 lambda:          14329 defect:        5.13202
+1 lambda:          14570 defect:        2949.95
+2 lambda:    1.40597e+06 defect:    8.15991e+06
+3 lambda:    4.20126e+06 defect:    1.60048e+07
+4 lambda:    1.18678e+07 defect:    2.68106e+07
+5 lambda:    6.24569e+07 defect:    6.63911e+07
+6 lambda:    6.81415e+07 defect:    1.25427e+08
+7 lambda:    1.31293e+08 defect:    1.13073e+08
+8 lambda:      2.522e+08 defect:    1.46072e+08
+9 lambda:    3.59097e+09 defect:    7.70025e+08
+=====================================================================================
+iteration 18
+0 lambda:          14329 defect:        5.13202 reduction:       0.501694
+
+0 lambda:          14329 defect:        2.91274
+1 lambda:          14570 defect:        2949.73
+2 lambda:    1.40597e+06 defect:     8.1572e+06
+3 lambda:    4.19847e+06 defect:    1.57829e+07
+4 lambda:    1.18325e+07 defect:    2.68235e+07
+5 lambda:    6.22494e+07 defect:    6.57625e+07
+6 lambda:    6.80584e+07 defect:    1.27201e+08
+7 lambda:    1.28706e+08 defect:    1.14004e+08
+8 lambda:    2.52159e+08 defect:    1.45907e+08
+9 lambda:    3.98908e+09 defect:    8.29902e+08
+=====================================================================================
+iteration 19
+0 lambda:          14329 defect:        2.91274 reduction:       0.567563
+
+0 lambda:          14329 defect:        1.47552
+1 lambda:          14570 defect:        2949.76
+2 lambda:    1.40591e+06 defect:    8.16509e+06
+3 lambda:    4.19531e+06 defect:    1.60103e+07
+4 lambda:    1.17371e+07 defect:    2.65878e+07
+5 lambda:    6.20904e+07 defect:    6.67126e+07
+6 lambda:    6.77809e+07 defect:    1.26963e+08
+7 lambda:     1.2832e+08 defect:    1.13404e+08
+8 lambda:    2.51152e+08 defect:    1.47323e+08
+9 lambda:    3.27804e+09 defect:    8.05937e+08
+=====================================================================================
+iteration 20
+0 lambda:          14329 defect:        1.47552 reduction:       0.506574
+
+0 lambda:          14329 defect:       0.872394
+1 lambda:          14570 defect:        2949.55
+2 lambda:    1.40591e+06 defect:    8.16672e+06
+3 lambda:    4.19459e+06 defect:    1.61231e+07
+4 lambda:    1.17354e+07 defect:    2.66404e+07
+5 lambda:    6.20904e+07 defect:    6.67056e+07
+6 lambda:    6.76683e+07 defect:    1.28016e+08
+7 lambda:    1.28264e+08 defect:    1.13633e+08
+8 lambda:     2.5115e+08 defect:    1.47249e+08
+9 lambda:    3.82065e+09 defect:    8.64184e+08
+=====================================================================================
+iteration 21
+0 lambda:          14329 defect:       0.872394 reduction:       0.591246
+
+0 lambda:          14329 defect:       0.443653
+1 lambda:          14570 defect:        2949.54
+2 lambda:     1.4059e+06 defect:    8.16366e+06
+3 lambda:    4.19457e+06 defect:     1.6142e+07
+4 lambda:    1.17218e+07 defect:    2.68126e+07
+5 lambda:    6.20078e+07 defect:    6.68216e+07
+6 lambda:    6.76181e+07 defect:    1.28296e+08
+7 lambda:    1.28029e+08 defect:    1.13228e+08
+8 lambda:    2.50606e+08 defect:    1.48696e+08
+9 lambda:     2.7314e+09 defect:    7.69576e+08
+=====================================================================================
+iteration 22
+0 lambda:          14329 defect:       0.443653 reduction:       0.508546
+
+0 lambda:          14329 defect:       0.268669
+1 lambda:          14570 defect:        2950.43
+2 lambda:     1.4056e+06 defect:    8.14498e+06
+3 lambda:    4.19451e+06 defect:    1.61093e+07
+4 lambda:      1.172e+07 defect:    2.69146e+07
+5 lambda:    6.20065e+07 defect:    6.68012e+07
+6 lambda:    6.76155e+07 defect:     1.2848e+08
+7 lambda:    1.27977e+08 defect:    1.13472e+08
+8 lambda:    2.50548e+08 defect:    1.48171e+08
+9 lambda:    3.04615e+09 defect:    8.02306e+08
+=====================================================================================
+iteration 23
+0 lambda:          14329 defect:       0.268669 reduction:       0.605584
+
+0 lambda:          14329 defect:       0.138514
+1 lambda:          14570 defect:        2950.15
+2 lambda:    1.40552e+06 defect:     8.1369e+06
+3 lambda:    4.19448e+06 defect:    1.61324e+07
+4 lambda:    1.17131e+07 defect:    2.71348e+07
+5 lambda:    6.19284e+07 defect:    6.68433e+07
+6 lambda:     6.7609e+07 defect:    1.28633e+08
+7 lambda:    1.27643e+08 defect:    1.13016e+08
+8 lambda:    2.50533e+08 defect:    1.48401e+08
+9 lambda:    2.42614e+09 defect:    7.45416e+08
+=====================================================================================
+iteration 24
+0 lambda:          14329 defect:       0.138514 reduction:       0.515556
+
+0 lambda:          14329 defect:      0.0855225
+1 lambda:          14570 defect:         2950.3
+2 lambda:    1.40527e+06 defect:    8.12222e+06
+3 lambda:    4.19378e+06 defect:    1.60282e+07
+4 lambda:     1.1709e+07 defect:    2.69393e+07
+5 lambda:    6.19138e+07 defect:     6.6631e+07
+6 lambda:    6.75834e+07 defect:    1.28083e+08
+7 lambda:    1.27603e+08 defect:    1.12826e+08
+8 lambda:    2.50459e+08 defect:    1.47992e+08
+9 lambda:    2.71348e+09 defect:    7.81705e+08
+=====================================================================================
+iteration 25
+0 lambda:          14329 defect:      0.0855225 reduction:       0.617428
+
+0 lambda:          14329 defect:      0.0453959
+1 lambda:          14570 defect:        2950.67
+2 lambda:    1.40496e+06 defect:     8.1074e+06
+3 lambda:    4.19364e+06 defect:    1.59805e+07
+4 lambda:    1.16976e+07 defect:    2.72483e+07
+5 lambda:    6.19138e+07 defect:    6.66378e+07
+6 lambda:    6.75834e+07 defect:    1.28074e+08
+7 lambda:    1.27415e+08 defect:    1.12964e+08
+8 lambda:    2.50286e+08 defect:    1.47641e+08
+9 lambda:    2.22132e+09 defect:    7.30788e+08
+=====================================================================================
+iteration 26
+0 lambda:          14329 defect:      0.0453959 reduction:       0.530806
+
+0 lambda:          14329 defect:      0.0281414
+1 lambda:          14570 defect:        2949.77
+2 lambda:    1.40472e+06 defect:    8.09739e+06
+3 lambda:    4.19307e+06 defect:    1.58971e+07
+4 lambda:    1.16961e+07 defect:    2.73899e+07
+5 lambda:    6.17362e+07 defect:     6.6934e+07
+6 lambda:    6.75553e+07 defect:    1.26649e+08
+7 lambda:    1.22183e+08 defect:    1.18142e+08
+8 lambda:     2.4894e+08 defect:    1.48201e+08
+9 lambda:    2.34224e+09 defect:    7.18175e+08
+=====================================================================================
+iteration 27
+0 lambda:          14329 defect:      0.0281414 reduction:        0.61991
+
+0 lambda:          14329 defect:      0.0143477
+1 lambda:          14570 defect:        2949.81
+2 lambda:    1.40435e+06 defect:    8.09786e+06
+3 lambda:     4.1928e+06 defect:    1.58388e+07
+4 lambda:    1.16771e+07 defect:     2.7871e+07
+5 lambda:    6.15935e+07 defect:    6.70176e+07
+6 lambda:    6.75552e+07 defect:    1.26608e+08
+7 lambda:    1.19026e+08 defect:    1.25851e+08
+8 lambda:    2.48001e+08 defect:    1.49926e+08
+9 lambda:     2.0762e+09 defect:     6.7879e+08
+=====================================================================================
+iteration 28
+0 lambda:          14329 defect:      0.0143477 reduction:       0.509845
+
+0 lambda:          14329 defect:     0.00885242
+1 lambda:          14570 defect:        2949.91
+2 lambda:    1.40421e+06 defect:    8.10373e+06
+3 lambda:    4.18967e+06 defect:    1.56856e+07
+4 lambda:      1.166e+07 defect:    2.74134e+07
+5 lambda:     6.1584e+07 defect:    6.73949e+07
+6 lambda:    6.75009e+07 defect:    1.25503e+08
+7 lambda:    1.18851e+08 defect:    1.28602e+08
+8 lambda:      2.474e+08 defect:    1.52246e+08
+9 lambda:    2.38061e+09 defect:    7.06488e+08
+=====================================================================================
+iteration 29
+0 lambda:          14329 defect:     0.00885242 reduction:       0.616991
+
+0 lambda:          14329 defect:     0.00456885
+1 lambda:          14570 defect:           2949
+2 lambda:    1.40359e+06 defect:    8.12553e+06
+3 lambda:    4.18387e+06 defect:    1.54886e+07
+4 lambda:    1.16358e+07 defect:    2.79389e+07
+5 lambda:    4.72171e+07 defect:    9.29571e+07
+6 lambda:    6.75009e+07 defect:    1.25457e+08
+7 lambda:    7.50846e+07 defect:    1.09922e+08
+8 lambda:    2.37683e+08 defect:    1.53191e+08
+9 lambda:    2.76671e+09 defect:    5.07235e+08
+=====================================================================================
+iteration 30
+0 lambda:          14329 defect:     0.00456885 reduction:       0.516113
+
+0 lambda:          14329 defect:     0.00148174
+1 lambda:          14570 defect:        2949.34
+2 lambda:    1.40007e+06 defect:    8.17639e+06
+3 lambda:    4.17882e+06 defect:    1.54289e+07
+4 lambda:    8.22475e+06 defect:    3.37456e+07
+5 lambda:    2.00385e+07 defect:    5.56573e+07
+6 lambda:    6.69643e+07 defect:    1.35025e+08
+7 lambda:    6.86898e+07 defect:    5.76847e+07
+8 lambda:    2.32814e+08 defect:    1.57394e+08
+9 lambda:    4.14992e+09 defect:     7.0737e+08
+=====================================================================================
+iteration 31
+0 lambda:          14329 defect:     0.00148174 reduction:       0.324313
+
+0 lambda:          14329 defect:    0.000499532
+1 lambda:          14570 defect:        2940.67
+2 lambda:    1.37444e+06 defect:    8.44722e+06
+3 lambda:    3.43278e+06 defect:    1.92007e+07
+4 lambda:    4.21451e+06 defect:    1.59396e+07
+5 lambda:     1.8488e+07 defect:    4.37673e+07
+6 lambda:    6.62425e+07 defect:    1.29438e+08
+7 lambda:    6.86595e+07 defect:    5.97354e+07
+8 lambda:    2.11394e+08 defect:    1.73859e+08
+9 lambda:    3.33278e+09 defect:    6.94809e+08
+=====================================================================================
+iteration 32
+0 lambda:          14329 defect:    0.000499532 reduction:       0.337126 (converged)
+
+all eigenvectors converged
+Eigenvalues
+calculated frequencies:
+-----------------------------------------------------
+density: 0.0079
+Eigenvalue 1 = 14328.97530741 = 214.34539281681 Hz
+
+adjusted frequencies:
+-----------------------------------------------------
+density: 0
+E: 200
+Eigenvalue 1 = 14328.97530741 = inf Hz
+
+duration assembly: 0.20674896240234s
+duration solver: 10.068300008774s
+duration total: 11.387279987335s
+
+

@@ -1,0 +1,43 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/arrow-up.png</file>
+        <file>images/arrow-right.png</file>
+        <file>images/arrow-down.png</file>
+        <file>images/arrow-left.png</file>
+        <file>images/fileopen.png</file>
+        <file>images/invisible_16.png</file>
+        <file>images/visible_16.png</file>
+        <file>images/cube_solid.png</file>
+        <file>images/erase.png</file>
+        <file>images/filesave.png</file>
+        <file>images/filenew.png</file>
+        <file>images/icon_render_edges.png</file>
+        <file>images/icon_render_faces.png</file>
+        <file>images/icon_render_vertices.png</file>
+        <file>images/icon_render_volumes.png</file>
+        <file>images/icon_edges.png</file>
+        <file>images/icon_faces.png</file>
+        <file>images/icon_vertices.png</file>
+        <file>images/icon_volumes.png</file>
+        <file>images/editredo.png</file>
+        <file>images/editundo.png</file>
+        <file>images/icon_box_select.png</file>
+        <file>images/icon_box_select_cut.png</file>
+        <file>images/icon_click_select.png</file>
+        
+        <file>images/tool_camera.png</file>
+        <file>images/tool_info.png</file>
+        <file>images/tool_geometry_generation.png</file>
+        <file>images/tool_remeshing.png</file>
+        <file>images/tool_selection.png</file>
+        <file>images/tool_subsets.png</file>
+        <file>images/tool_scripts.png</file>
+        <file>images/tool_transform.png</file>
+        <file>images/tool_unknown.png</file>
+    </qresource>
+
+    <qresource prefix="/">
+        <file>styles/emvis_style.css</file>
+        <file>styles/dark_theme_variables.txt</file>
+    </qresource>
+</RCC>

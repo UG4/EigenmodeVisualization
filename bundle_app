@@ -1,0 +1,35 @@
+echo adjusting app-bundle for deployment.
+echo
+# store the path in which the script was executed
+execPath="`pwd`"
+
+#check whether the bundle exists at the given position
+mkdir EmVis.app/Contents/Resources
+cd EmVis.app/Contents/Resources
+
+if [ `pwd` != "$execPath"/EmVis.app/Contents/Resources ]
+then
+#  the app doesn't exist
+   echo "Can't find EmVis.app. Execute this script in the path in which EmVis.app is located."
+else
+  cd $execPath
+#check if the deploy_data directory exists
+  
+  echo adjusting for deployment
+  macdeployqt-4.6 EmVis.app
+  
+  cd deploy_data
+  if [ `pwd` != "$execPath"/deploy_data ]
+    then
+  #   the app doesn't exist
+      echo "Can't find deploy_data path."
+  else
+  #   copy the files
+      echo copying info files...
+      cp Info.plist ../EmVis.app/Contents/
+      cp AppIcon.icns ../EmVis.app/Contents/Resources    
+  fi
+# copy EmVis to the Application path
+  echo copying EmVis.app to Applications.
+  cp -r -f "$execPath"/EmVis.app /Applications/
+fi
