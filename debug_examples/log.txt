@@ -1,0 +1,250 @@
+********************************************************************************
+* ugshell - ug4.0.2, head revision 'UNKNOWN',                                  *
+*                    compiled 'UNKNOWN'                                        *
+*                    on 'UNKNOWN'.                                             *
+*                                                                              *
+* arguments:                                                                   *
+*   -outproc id:         Sets the output-proc to id. Default is 0.             *
+*   -ex scriptname:      Executes the specified script.                        *
+*   -noquit:             Runs the interactive shell after specified script.    *
+*   -noterm:             Terminal logging will be disabled.                    *
+*   -logtofile filename: Output will be written to the specified file.         *
+*   -call:               Combines all following arguments to one lua command   *
+*                        and executes it. Ignored if it follows '-ex'.         *
+*                        '(', ')', and '"' have to be escaped, e.g.: '\('      *
+* Additional parameters are passed to the script through ugargc and ugargv.    *
+*                                                                              *
+* Initializing: paths... done, bridge... done, plugins... done                 *
+********************************************************************************
+ General parameters chosen:
+    grid       = ./../apps/Shaheen/tuning_fork.ugx
+    numRefs    = 0
+    numPreRefs = 0
+    numProcs   = 1
+    material   = Iron
+  evIterations = 100
+  evPrec = 0.001
+
+| ---------------------------------------------------------------------------- |
+|  Number of DoFs (All Procs)                                                  |
+|  Algebra: Block 3 (divide by 3 for #Index)                                   |
+|                                                                              |
+|    GridLevel   |       Domain |     0: Inner |  1: Boundary                  |
+| ---------------------------------------------------------------------------- |
+| (lev,    0)    |         2373 |         2334 |           39 |
+| (lev,    0, g) |         2373 |         2334 |           39 |
+| (surf, top)    |         2373 |         2334 |           39 |
+| ---------------------------------------------------------------------------- |
+| For Legend and Options: print_statistic("legend").                           |
+| ---------------------------------------------------------------------------- |
+Assemble Mass Matrix
+Assemble Stiffness Matrix
+PINVIT Eigensolver by Martin Rupp / G-CSC 2013-2015.
+ MaxIterations = 100
+ Precision = 0.001 (absolute) 
+ MinimumDefectToCalcCorrection = 0.001
+ Number of EV = 10
+ PINVIT = 2 = Preconditioned Block Gradient Method
+ Preconditioner: 
+ | GeometricMultigrid (V-Cycle)
+ |  Smoother (3x pre, 3x post): Symmetric Gauss-Seidel( damping = ConstantDamping(1))
+ |  Basesolver ( Baselevel = 0, gathered base = true): 
+ |  # LU Decomposition: Direct Solver for Linear Equation Systems.
+ |  #  Minimum Entries for Sparse LU: 4000
+
+	Additionaly storing 8 eigenvectors
+
+Initializing... done.
+PINVIT: Initializing preconditioner... done.
+=====================================================================================
+iteration 0
+0 lambda:    4.73539e+10 defect:    9.70405e+09
+1 lambda:    4.85452e+10 defect:    9.77058e+09
+2 lambda:     4.8767e+10 defect:    9.72117e+09
+3 lambda:    5.17222e+10 defect:    1.07145e+10
+4 lambda:    4.76216e+10 defect:    9.52091e+09
+5 lambda:    4.81616e+10 defect:    9.90065e+09
+6 lambda:    5.00437e+10 defect:    1.04105e+10
+7 lambda:    4.64188e+10 defect:     9.5709e+09
+8 lambda:    5.04365e+10 defect:    1.02146e+10
+9 lambda:    4.70453e+10 defect:    9.87953e+09
+
+=====================================================================================
+iteration 1
+0 lambda:          19467 defect:        9112.94 reduction:    9.39086e-07
+1 lambda:        20435.8 defect:        18712.7 reduction:    1.91521e-06
+2 lambda:        90813.3 defect:        82815.8 reduction:    8.51912e-06
+3 lambda:         109077 defect:         120103 reduction:    1.12094e-05
+4 lambda:    9.95688e+09 defect:    4.33213e+09 reduction:       0.455013
+5 lambda:    6.17519e+11 defect:    2.96335e+10 reduction:        2.99309
+6 lambda:    6.43238e+11 defect:    3.01555e+10 reduction:        2.89665
+7 lambda:    6.62374e+11 defect:    3.19285e+10 reduction:          3.336
+8 lambda:    6.89776e+11 defect:    3.20661e+10 reduction:        3.13923
+9 lambda:    7.05765e+11 defect:    3.22366e+10 reduction:        3.26296
+
+=====================================================================================
+iteration 2
+0 lambda:        19242.6 defect:        111.632 reduction:      0.0122499
+1 lambda:        20241.8 defect:        148.784 reduction:     0.00795093
+2 lambda:          65460 defect:        5146.34 reduction:       0.062142
+3 lambda:        81796.3 defect:        4619.18 reduction:        0.03846
+4 lambda:    1.02863e+06 defect:         564576 reduction:    0.000130323
+5 lambda:    1.06443e+06 defect:         577326 reduction:    1.94822e-05
+6 lambda:    1.80611e+06 defect:    1.00334e+06 reduction:    3.32721e-05
+7 lambda:    3.83803e+06 defect:    1.81368e+06 reduction:    5.68045e-05
+8 lambda:    8.78356e+06 defect:    3.21024e+06 reduction:    0.000100113
+9 lambda:    1.16926e+07 defect:    4.41536e+06 reduction:    0.000136967
+
+=====================================================================================
+iteration 3
+0 lambda:        19242.6 defect:      0.0511004 reduction:    0.000457756
+1 lambda:        20241.8 defect:      0.0471067 reduction:    0.000316612
+2 lambda:        65455.8 defect:        10.4109 reduction:     0.00202297
+3 lambda:        81792.9 defect:        10.0164 reduction:     0.00216844
+4 lambda:         994393 defect:        7868.26 reduction:      0.0139366
+5 lambda:    1.02028e+06 defect:          19355 reduction:      0.0335253
+6 lambda:    1.62876e+06 defect:         102038 reduction:       0.101699
+7 lambda:    3.18612e+06 defect:         209786 reduction:       0.115669
+8 lambda:    7.64668e+06 defect:         694479 reduction:       0.216333
+9 lambda:    8.27827e+06 defect:    1.29786e+06 reduction:       0.293943
+
+=====================================================================================
+iteration 4
+0 lambda:        19242.6 defect:    9.43673e-06 reduction:     0.00018467 (converged)
+1 lambda:        20241.8 defect:    9.17747e-06 reduction:    0.000194823 (converged)
+2 lambda:        65455.8 defect:     0.00429345 reduction:    0.000412399
+3 lambda:        81792.9 defect:     0.00641673 reduction:    0.000640622
+4 lambda:         994389 defect:        59.4266 reduction:     0.00755269
+5 lambda:    1.02026e+06 defect:        154.744 reduction:     0.00799504
+6 lambda:     1.6282e+06 defect:        1404.56 reduction:      0.0137651
+7 lambda:    3.18343e+06 defect:        5465.74 reduction:      0.0260538
+8 lambda:    7.49279e+06 defect:         211580 reduction:        0.30466
+9 lambda:    7.76212e+06 defect:         194662 reduction:       0.149986
+
+=====================================================================================
+iteration 5
+0 lambda:        19242.6 defect:     8.4524e-06 reduction:       0.895692 (converged)
+1 lambda:        20241.8 defect:    0.000937382 reduction:        102.139 (converged)
+2 lambda:        65455.8 defect:     0.00360767 reduction:       0.840274
+3 lambda:        81792.9 defect:     0.00409738 reduction:       0.638547
+4 lambda:         994389 defect:       0.276418 reduction:     0.00465142
+5 lambda:    1.02026e+06 defect:       0.645422 reduction:      0.0041709
+6 lambda:     1.6282e+06 defect:        9.20753 reduction:     0.00655543
+7 lambda:    3.18343e+06 defect:         58.482 reduction:      0.0106997
+8 lambda:    7.49197e+06 defect:        6635.55 reduction:      0.0313619
+9 lambda:    7.76149e+06 defect:         5911.4 reduction:      0.0303676
+
+=====================================================================================
+iteration 6
+0 lambda:        19242.6 defect:    9.00404e-06 reduction:        1.06526 (converged)
+1 lambda:        20241.8 defect:    2.56622e-05 reduction:      0.0273765 (converged)
+2 lambda:        65455.8 defect:    2.30988e-05 reduction:     0.00640268 (converged)
+3 lambda:        81792.9 defect:    6.70036e-05 reduction:      0.0163528 (converged)
+4 lambda:         994389 defect:     0.00283845 reduction:      0.0102687
+5 lambda:    1.02026e+06 defect:     0.00387885 reduction:     0.00600978
+6 lambda:     1.6282e+06 defect:      0.0956062 reduction:      0.0103835
+7 lambda:    3.18343e+06 defect:        1.55201 reduction:      0.0265383
+8 lambda:    7.49197e+06 defect:        334.624 reduction:       0.050429
+9 lambda:    7.76149e+06 defect:        342.285 reduction:      0.0579026
+
+=====================================================================================
+iteration 7
+0 lambda:        19242.6 defect:    1.03825e-05 reduction:        1.15309 (converged)
+1 lambda:        20241.8 defect:    0.000132968 reduction:        5.18144 (converged)
+2 lambda:        65455.8 defect:    7.37997e-05 reduction:        3.19496 (converged)
+3 lambda:        81792.9 defect:    0.000228111 reduction:        3.40446 (converged)
+4 lambda:         994389 defect:    2.34132e-05 reduction:     0.00824858 (converged)
+5 lambda:    1.02026e+06 defect:     9.7146e-05 reduction:      0.0250451 (converged)
+6 lambda:     1.6282e+06 defect:    0.000643227 reduction:     0.00672788 (converged)
+7 lambda:    3.18343e+06 defect:      0.0200929 reduction:      0.0129463
+8 lambda:    7.49197e+06 defect:        10.2996 reduction:      0.0307796
+9 lambda:    7.76149e+06 defect:         10.833 reduction:      0.0316491
+
+=====================================================================================
+iteration 8
+0 lambda:        19242.6 defect:    1.07709e-05 reduction:        1.03741 (converged)
+1 lambda:        20241.8 defect:    0.000133314 reduction:        1.00261 (converged)
+2 lambda:        65455.8 defect:     7.3938e-05 reduction:        1.00187 (converged)
+3 lambda:        81792.9 defect:    0.000229098 reduction:        1.00432 (converged)
+4 lambda:         994389 defect:     1.9128e-05 reduction:       0.816975 (converged)
+5 lambda:    1.02026e+06 defect:    9.56238e-05 reduction:       0.984331 (converged)
+6 lambda:     1.6282e+06 defect:    6.69062e-05 reduction:       0.104016 (converged)
+7 lambda:    3.18343e+06 defect:    0.000919752 reduction:       0.045775 (converged)
+8 lambda:    7.49197e+06 defect:       0.649519 reduction:      0.0630627
+9 lambda:    7.76149e+06 defect:       0.940287 reduction:      0.0867982
+
+=====================================================================================
+iteration 9
+0 lambda:        19242.6 defect:    1.19806e-05 reduction:        1.11232 (converged)
+1 lambda:        20241.8 defect:    0.000133797 reduction:        1.00362 (converged)
+2 lambda:        65455.8 defect:    7.34662e-05 reduction:       0.993619 (converged)
+3 lambda:        81792.9 defect:    0.000230459 reduction:        1.00594 (converged)
+4 lambda:         994389 defect:    1.96797e-05 reduction:        1.02884 (converged)
+5 lambda:    1.02026e+06 defect:    9.55918e-05 reduction:       0.999666 (converged)
+6 lambda:     1.6282e+06 defect:    6.59898e-05 reduction:       0.986304 (converged)
+7 lambda:    3.18343e+06 defect:    0.000113676 reduction:       0.123594 (converged)
+8 lambda:    7.49197e+06 defect:      0.0221379 reduction:      0.0340835
+9 lambda:    7.76149e+06 defect:      0.0341807 reduction:      0.0363513
+
+=====================================================================================
+iteration 10
+0 lambda:        19242.6 defect:    1.27515e-05 reduction:        1.06435 (converged)
+1 lambda:        20241.8 defect:    0.000134414 reduction:        1.00461 (converged)
+2 lambda:        65455.8 defect:    7.36408e-05 reduction:        1.00238 (converged)
+3 lambda:        81792.9 defect:    0.000231198 reduction:        1.00321 (converged)
+4 lambda:         994389 defect:    2.00492e-05 reduction:        1.01877 (converged)
+5 lambda:    1.02026e+06 defect:    9.58325e-05 reduction:        1.00252 (converged)
+6 lambda:     1.6282e+06 defect:     6.6149e-05 reduction:        1.00241 (converged)
+7 lambda:    3.18343e+06 defect:    0.000113043 reduction:        0.99443 (converged)
+8 lambda:    7.49197e+06 defect:     0.00221446 reduction:        0.10003
+9 lambda:    7.76149e+06 defect:     0.00424948 reduction:       0.124324
+
+=====================================================================================
+iteration 11
+0 lambda:        19242.6 defect:    1.39426e-05 reduction:        1.09341 (converged)
+1 lambda:        20241.8 defect:    0.000134644 reduction:        1.00171 (converged)
+2 lambda:        65455.8 defect:    7.42209e-05 reduction:        1.00788 (converged)
+3 lambda:        81792.9 defect:    0.000231179 reduction:       0.999915 (converged)
+4 lambda:         994389 defect:    2.11111e-05 reduction:        1.05297 (converged)
+5 lambda:    1.02026e+06 defect:    9.64361e-05 reduction:         1.0063 (converged)
+6 lambda:     1.6282e+06 defect:    6.66792e-05 reduction:        1.00802 (converged)
+7 lambda:    3.18343e+06 defect:    0.000111362 reduction:       0.985131 (converged)
+8 lambda:    7.49197e+06 defect:    8.23275e-05 reduction:      0.0371772 (converged)
+9 lambda:    7.76149e+06 defect:    0.000169165 reduction:      0.0398085 (converged)
+
+all eigenvectors converged
+Eigenvalues
+calculated frequencies:
+-----------------------------------------------------
+density: 0.0079
+Eigenvalue 1 = 19242.569003663 = 248.39229052597 Hz
+Eigenvalue 2 = 20241.782051302 = 254.7598345618 Hz
+Eigenvalue 3 = 65455.78607933 = 458.12142971125 Hz
+Eigenvalue 4 = 81792.929664895 = 512.11142871294 Hz
+Eigenvalue 5 = 994388.78157088 = 1785.6021247094 Hz
+Eigenvalue 6 = 1020261.0112158 = 1808.6820616173 Hz
+Eigenvalue 7 = 1628197.7676214 = 2284.8629921755 Hz
+Eigenvalue 8 = 3183432.9655769 = 3194.8791904731 Hz
+Eigenvalue 9 = 7491970.4502499 = 4901.2247043266 Hz
+Eigenvalue 10 = 7761490.8485915 = 4988.6054963022 Hz
+
+adjusted frequencies:
+-----------------------------------------------------
+density: 0.01070164830478
+E: 200
+Eigenvalue 1 = 19242.569003663 = 213.41567811932 Hz
+Eigenvalue 2 = 20241.782051302 = 218.88659561633 Hz
+Eigenvalue 3 = 65455.78607933 = 393.61244012763 Hz
+Eigenvalue 4 = 81792.929664895 = 440 Hz
+Eigenvalue 5 = 994388.78157088 = 1534.1679385025 Hz
+Eigenvalue 6 = 1020261.0112158 = 1553.9979435954 Hz
+Eigenvalue 7 = 1628197.7676214 = 1963.1268903408 Hz
+Eigenvalue 8 = 3183432.9655769 = 2745.0018980071 Hz
+Eigenvalue 9 = 7491970.4502499 = 4211.0735066461 Hz
+Eigenvalue 10 = 7761490.8485915 = 4286.1500355294 Hz
+
+duration assembly: 0.29754900932312s
+duration solver: 3.3902578353882s
+duration total: 4.2119760513306s
+
+
